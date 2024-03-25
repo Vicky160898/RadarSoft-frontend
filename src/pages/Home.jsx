@@ -157,23 +157,21 @@ export default function Home() {
         {sortOrder === "asc" ? <ArrowDropDownIcon /> : <ArrowDropUpIcon />}
       </RightAlignedButton>
       <Grid container spacing={4} sx={{ width: "95%", margin: "auto" }}>
-        {loading ? (
-          <Loading /> ? (
-            data && data.length === 0
-          ) : (
-            <Grid
-              container
-              justifyContent="center"
-              alignItems="center"
-              sx={{ minHeight: "70vh" }}
-            >
-              <Grid item>
-                <Typography variant="h6">
-                  No blogs found. Start creating your blogs!
-                </Typography>
-              </Grid>
+      {loading ? (
+          <Loading />
+        ) : data.length === 0 ? (
+          <Grid
+            container
+            justifyContent="center"
+            alignItems="center"
+            sx={{ minHeight: "70vh" }}
+          >
+            <Grid item>
+              <Typography variant="h6">
+                No blogs found. Start creating your blogs!
+              </Typography>
             </Grid>
-          )
+          </Grid>
         ) : (
           data &&
           data?.map((item, i) => (
