@@ -177,6 +177,9 @@ export default function OwnBlog() {
                     alt="Paella dish"
                   />
                   <CardContent sx={{ flexGrow: 1 }}>
+                  <Typography variant="body1" color="text.secondary">
+                      Blog Title : {item.title}
+                    </Typography>
                     <Typography variant="body1" color="text.secondary">
                       Blog Category: {item.category}
                     </Typography>
