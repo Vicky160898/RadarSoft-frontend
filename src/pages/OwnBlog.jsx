@@ -125,22 +125,20 @@ export default function OwnBlog() {
     <>
       <Grid container spacing={4} sx={{ width: "95%", margin: "auto" }}>
         {loading ? (
-          <Loading /> ? (
-            data && data.length === 0
-          ) : (
-            <Grid
-              container
-              justifyContent="center"
-              alignItems="center"
-              sx={{ minHeight: "80vh" }}
-            >
-              <Grid item>
-                <Typography variant="h6">
-                  No blogs found. Start creating your blogs!
-                </Typography>
-              </Grid>
+          <Loading />
+        ) : data.length === 0 ? (
+          <Grid
+            container
+            justifyContent="center"
+            alignItems="center"
+            sx={{ minHeight: "80vh" }}
+          >
+            <Grid item>
+              <Typography variant="h6">
+                No blogs found. Start creating your blogs!
+              </Typography>
             </Grid>
-          )
+          </Grid>
         ) : (
           data?.map((item, i) => (
             <Grid item xs={12} sm={6} md={4} key={i}>
